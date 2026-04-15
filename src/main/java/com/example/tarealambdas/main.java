@@ -1,6 +1,7 @@
 package com.example.tarealambdas;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class main {
@@ -41,7 +42,17 @@ public class main {
         System.out.println(cuadradosUnicos);
 
 
+        //Obtener clave y valores de una lista de palabras
         ArrayList<String> palabras = new ArrayList<>();
+        palabras.add("Onrritorinco");
+        palabras.add("ballena azul");
+        palabras.add("Tom y Jerry");
+        palabras.add("enchufe");
+        palabras.add("1234");
+        System.out.println(palabras);
+        HashMap<String,Integer> claveValor = modificarString.lengthMap(palabras);
+        System.out.println(claveValor);
+
 
     }
 }

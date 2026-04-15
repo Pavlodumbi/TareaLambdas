@@ -19,11 +19,12 @@ public class modificarString {
         return nuevo;
     }
 
-    public static void lengthMap(ArrayList<String> palabras){
+    public static HashMap<String,Integer> lengthMap(ArrayList<String> palabras){
         HashMap<String,Integer> claveValor =  (HashMap<String, Integer>) palabras.stream()
                 .collect(Collectors.toMap(
                 p -> p,
                 p -> p.length()
         ));
+        return claveValor;
     }
 }
