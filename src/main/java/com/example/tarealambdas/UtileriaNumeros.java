@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class UtileriaNumeros {
 
-    public static void multiplicadorPorFactor(ArrayList<Integer> entrada, Integer factor){
+    public static void multiplicarElementosPorFactor(ArrayList<Integer> entrada, Integer factor){
         if(factor == null)return;
 
         entrada.replaceAll(t-> t*factor);
@@ -18,7 +18,7 @@ public class UtileriaNumeros {
         HashSet<Integer> unicos = (HashSet<Integer>) numeros.stream()
                 .distinct()
                 .filter(n -> n % 2 == 0)
-                .map(n -> n*n)
+                .map(n ->  n*n)
                 .collect(Collectors.toSet());
         return unicos;
     }

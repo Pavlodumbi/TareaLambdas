@@ -6,15 +6,17 @@ import java.util.stream.Collectors;
 
 public class UtileriaCadenas {
 
-    public static void filtroSelectivo(ArrayList<String> cadenas, char letra, Integer longitud){
-        if(longitud == null)return;
-        cadenas.removeIf(c -> c.length() < longitud || c.charAt(0) == letra);
+    public static void filtrarPorLetraYLongitud(ArrayList<String> cadenas, char letra, Integer longitud){
+        if(longitud == null || cadenas == null)return;
+
+        cadenas.removeIf(c -> c.length() < longitud || Character.toLowerCase(c.charAt(0)) == Character.toLowerCase(letra));
     }
 
     public static ArrayList<String> conversorMayusculas(ArrayList<String> lista){
         if(lista == null) return new ArrayList<>();
 
         ArrayList<String> nuevo = (ArrayList<String>) lista.stream()
+                .filter(t-> t != null) //Para que no de error por algun elemento null
                 .map(String::toUpperCase)
                 .collect(Collectors.toList());
         return nuevo;
@@ -26,12 +28,13 @@ public class UtileriaCadenas {
         HashMap<String,Integer> claveValor =  (HashMap<String, Integer>) palabras.stream()
                 .collect(Collectors.toMap(
                 p -> p,
-                p -> p.length()
+                p -> p.length(),
+                        (a,b) -> a
         ));
         return claveValor;
     }
 
-    public static void modificadorInventario(HashMap<String,Double> inventario){
+    public static void mostrarDescuentoInventario(HashMap<String,Double> inventario){
         if(inventario == null) return;
 
         System.out.println("Inventario con 10% de descuento:");
@@ -55,6 +58,7 @@ public class UtileriaCadenas {
 
     public static ArrayList<String> clasificadorPalabras(HashMap<String,Integer> palabras, Integer valor){
         if(valor == null || palabras == null)return new ArrayList<>();
+
         ArrayList<String> clasificadas = (ArrayList<String>)  palabras.entrySet()
                 .stream()
                 .filter(p -> p.getValue() < valor)
@@ -66,7 +70,9 @@ public class UtileriaCadenas {
     public static HashSet<String> deduplicadorPalabras(String palabraGrandota, Integer nLetras){
         if(palabraGrandota == null || nLetras == null) return new HashSet<>();
 
-        String[] palabras = palabraGrandota.split(" ");
+        String nuevaGrandota = palabraGrandota.replaceAll("\\W+"," ");
+        String[] palabras = nuevaGrandota.split("\\s+");
+
         HashSet<String> deduplicadas = (HashSet<String>) Arrays.stream(palabras)
                 .filter(p -> p.length() < nLetras)
                 .map(String::toLowerCase)

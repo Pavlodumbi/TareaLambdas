@@ -1,8 +1,5 @@
 package com.example.tarealambdas;
 
-import jdk.jshell.execution.Util;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -20,18 +17,22 @@ public class Main {
         System.out.println("Antes de modificar:");
         System.out.println(prueba + "\n");
 
-        UtileriaNumeros.multiplicadorPorFactor(prueba,4);
+        UtileriaNumeros.multiplicarElementosPorFactor(prueba,4);
         System.out.println("Despues de utilizar un factor de 4:");
         System.out.println(prueba);
         System.out.println("\nCaso edge con factor null:  ");
-        UtileriaNumeros.multiplicadorPorFactor(prueba,null);
+        UtileriaNumeros.multiplicarElementosPorFactor(prueba,null);
         System.out.println(prueba);
         System.out.println("(No modifica nada por factor nulo)");
 
         ArrayList<Integer> vacio = new ArrayList<>();
-        UtileriaNumeros.multiplicadorPorFactor(vacio,1);
+        UtileriaNumeros.multiplicarElementosPorFactor(vacio,1);
         System.out.println("\nCaso con una lista vacia:");
         System.out.println(vacio);
+
+        System.out.println("\nCaso factor negativo:");
+        UtileriaNumeros.multiplicarElementosPorFactor(prueba,-1);
+        System.out.println(prueba);
         System.out.println("____________________________________________________________________________________________________");
 
         // Eliminar cadenas si tiene la primera letra o menos de N elementos
@@ -44,19 +45,20 @@ public class Main {
         cadenas.add("a esto tampoco");
         cadenas.add("Tal vez yo si");
         cadenas.add("ni");
+        cadenas.add("America");
         System.out.println("Cadena original:");
         System.out.println(cadenas + "\n");
 
-        UtileriaCadenas.filtroSelectivo(cadenas, 'a',4);
+        UtileriaCadenas.filtrarPorLetraYLongitud(cadenas, 'a',4);
         System.out.println("Cadena con filtro letra 'a' o menos de 4 caracteres:");
         System.out.println(cadenas);
         System.out.println("\nCaso longitud nula: ");
-        UtileriaCadenas.filtroSelectivo(cadenas, 'b',null);
+        UtileriaCadenas.filtrarPorLetraYLongitud(cadenas, 'b',null);
         System.out.println(cadenas);
         System.out.println("(No modifica nada)");
         System.out.println("\nCaso cadena vacia:");
         ArrayList<String> cadenaVacia = new ArrayList<>();
-        UtileriaCadenas.filtroSelectivo(cadenaVacia,'c',3);
+        UtileriaCadenas.filtrarPorLetraYLongitud(cadenaVacia,'c',3);
         System.out.println(cadenaVacia);
 
         System.out.println("____________________________________________________________________________________________________");
@@ -69,10 +71,17 @@ public class Main {
         ArrayList<String> convertidos = UtileriaCadenas.conversorMayusculas(cadenas);
         System.out.println("Cadena despues de convertir a Mayusculas: ");
         System.out.println(convertidos);
-        System.out.println("Si se envia una cadena vacia: ");
+        System.out.println("\nSi se envia una cadena vacia: ");
         ArrayList<String> vacia = new ArrayList<>();
         ArrayList<String> recibida = UtileriaCadenas.conversorMayusculas(vacia);
         System.out.println(recibida);
+
+        System.out.println("Caso lista con algun elemento nulo: ");
+        cadenas.add(null);
+        System.out.println(cadenas);
+        ArrayList<String> conNulo = UtileriaCadenas.conversorMayusculas(cadenas);
+        System.out.println(conNulo);
+        System.out.println("(Ignora el null)");
         System.out.println("____________________________________________________________________________________________________");
 
         //Obtener cuadrados Unicos
@@ -92,6 +101,13 @@ public class Main {
          ArrayList<Integer> vacios = new ArrayList<>();
         HashSet<Integer> cuadradosUnicosVacio = UtileriaNumeros.cuadradosUnicos(vacios);
         System.out.println(vacios);
+        System.out.println("\n Con valores negativos:");
+        numeros.add(-4);
+        numeros.add(-16);
+        HashSet<Integer> cuadradosUnicosConNegativo = UtileriaNumeros.cuadradosUnicos(numeros);
+        System.out.println("original con negativos: " + numeros);
+        System.out.println("cuadrados: " + cuadradosUnicosConNegativo);
+
         System.out.println("____________________________________________________________________________________________________");
 
         //Obtener clave y valores de una lista de palabras
@@ -113,6 +129,13 @@ public class Main {
         ArrayList<String> palabrasVacias = new ArrayList<>();
         HashMap<String,Integer> claveValorVacio = UtileriaCadenas.mapaLongitudes(palabrasVacias);
         System.out.println(palabrasVacias);
+
+        System.out.println("\nQue funcione con palabras repetidas: ");
+        palabras.add("termito");
+        System.out.println("con 'termito' repetido: " + palabras + "\n");
+        HashMap<String,Integer> conRepetidas = UtileriaCadenas.mapaLongitudes(palabras);
+        System.out.println(conRepetidas);
+        System.out.println("(Ignora la palabra si ya se puso una vez)");
         System.out.println("____________________________________________________________________________________________________");
 
         //Modificador de inventario
@@ -124,13 +147,13 @@ public class Main {
         inventario.put("monitor QHD", 3824.5);
         System.out.println("Inventario antes del descuento:");
         System.out.println(inventario + "\n");
-        UtileriaCadenas.modificadorInventario(inventario);
+        UtileriaCadenas.mostrarDescuentoInventario(inventario);
 
         System.out.println(" \nComprobamos que mantienen su valor original:");
         System.out.println(inventario + "\n");
         System.out.println("\nCaso cuando se envia un inventario vacio: ");
         HashMap<String,Double> inventarioVacio = new HashMap<>();
-        UtileriaCadenas.modificadorInventario(inventarioVacio);
+        UtileriaCadenas.mostrarDescuentoInventario(inventarioVacio);
         System.out.println("____________________________________________________________________________________________________");
 
         //contador de palabras usamos el mismo ArrayList palabras de arriba
@@ -191,6 +214,13 @@ public class Main {
         System.out.println("\nCuando enviamos un numero N nulo:");
         HashSet<String> deduplicar = UtileriaCadenas.deduplicadorPalabras(palabraGrandota,null);
         System.out.println(deduplicar);
+
+        System.out.println("\nPalabra con signos:");
+        String palabrota = "Hola mundo, como estan! estoy usando muchos signos porque? porque necesito comprobar que funciona.";
+        System.out.println(palabrota);
+        HashSet<String> palabrotaDeduplicada = UtileriaCadenas.deduplicadorPalabras(palabrota,6);
+        System.out.println(palabrotaDeduplicada);
+
         System.out.println("____________________________________________________________________________________________________");
 
         //tope de frecuencias samos el mismo hashmap de palabras frecuencias
@@ -212,6 +242,13 @@ public class Main {
         System.out.println("(No modifica nada)");
 
         System.out.println("____________________________________________________________________________________________________");
+
+
+
+
+
+
+
 
     }
 }
