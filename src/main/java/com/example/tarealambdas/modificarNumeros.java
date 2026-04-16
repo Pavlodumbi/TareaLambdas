@@ -1,6 +1,7 @@
 package com.example.tarealambdas;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.stream.Collectors;
 
@@ -18,5 +19,7 @@ public class modificarNumeros {
                 .collect(Collectors.toSet());
         return unicos;
     }
+
+
 
 }

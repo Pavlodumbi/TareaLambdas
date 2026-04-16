@@ -87,7 +87,14 @@ public class main {
         //Clasificador de palabras
         System.out.println("Clasificador de palabras:");
         System.out.println("Palabras antes de clasificar: " + palabrasFrecuencias);
-        ArrayList<String> clasificadas = modificarString.clasificarPalabras(palabrasFrecuencias,5);
+        ArrayList<String> clasificadas = modificarString.clasificarPalabras(palabrasFrecuencias,6);
         System.out.println("Palabras clasificadas: " + clasificadas);
+
+        //Deduplicar palabras
+        String palabraGrandota = "quiero deduplicar esta palabra por lo tanto lo voy a hacer porque quiero y puedo";
+        HashSet<String> deduplicadas =  modificarString.deduplicarPalabras(palabraGrandota, 7);
+        System.out.println(deduplicadas);
+
+
     }
 }

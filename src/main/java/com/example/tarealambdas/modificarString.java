@@ -1,9 +1,7 @@
 package com.example.tarealambdas;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class modificarString {
@@ -55,5 +53,14 @@ public class modificarString {
                 .map(p -> p.getKey())
                 .collect(Collectors.toList());
         return clasificadas;
+    }
+
+    public static HashSet<String> deduplicarPalabras(String palabraGrandota, int nLetras){
+        String[] palabras = palabraGrandota.split(" ");
+        HashSet<String> deduplicadas = (HashSet<String>) Arrays.stream(palabras)
+                .filter(p -> p.length() < nLetras)
+                .map(String::toLowerCase)
+                .collect(Collectors.toSet());
+        return deduplicadas;
     }
 }
