@@ -4,20 +4,25 @@ package com.example.tarealambdas;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class ModificadorString {
+public class UtileriaCadenas {
 
-    public static void aplicarFiltro(ArrayList<String> cadenas, char letra, int longitud){
+    public static void filtroSelectivo(ArrayList<String> cadenas, char letra, Integer longitud){
+        if(longitud == null)return;
         cadenas.removeIf(c -> c.length() < longitud || c.charAt(0) == letra);
     }
 
-    public static ArrayList<String> modificarAMayus(ArrayList<String> lista){
+    public static ArrayList<String> conversorMayusculas(ArrayList<String> lista){
+        if(lista == null) return new ArrayList<>();
+
         ArrayList<String> nuevo = (ArrayList<String>) lista.stream()
                 .map(String::toUpperCase)
                 .collect(Collectors.toList());
         return nuevo;
     }
 
-    public static HashMap<String,Integer> lengthMap(ArrayList<String> palabras){
+    public static HashMap<String,Integer> mapaLongitudes(ArrayList<String> palabras){
+        if(palabras == null) return new HashMap<>();
+
         HashMap<String,Integer> claveValor =  (HashMap<String, Integer>) palabras.stream()
                 .collect(Collectors.toMap(
                 p -> p,
@@ -26,7 +31,9 @@ public class ModificadorString {
         return claveValor;
     }
 
-    public static void modificarInventario(HashMap<String,Double> inventario){
+    public static void modificadorInventario(HashMap<String,Double> inventario){
+        if(inventario == null) return;
+
         System.out.println("Inventario con 10% de descuento:");
         inventario.forEach((clave,valor) -> {
             System.out.print(clave + " - ");
@@ -35,6 +42,8 @@ public class ModificadorString {
     }
 
     public static HashMap<String,Integer> contadorFrecuencias(ArrayList<String> palabras){
+        if(palabras == null) return new HashMap<>();
+
         HashMap<String,Integer> palabrasConv = new HashMap<>();
 
          palabras.forEach(p -> palabrasConv
@@ -44,7 +53,8 @@ public class ModificadorString {
 
     }
 
-    public static ArrayList<String> clasificarPalabras(HashMap<String,Integer> palabras, int valor){
+    public static ArrayList<String> clasificadorPalabras(HashMap<String,Integer> palabras, Integer valor){
+        if(valor == null || palabras == null)return new ArrayList<>();
         ArrayList<String> clasificadas = (ArrayList<String>)  palabras.entrySet()
                 .stream()
                 .filter(p -> p.getValue() < valor)
@@ -53,7 +63,9 @@ public class ModificadorString {
         return clasificadas;
     }
 
-    public static HashSet<String> deduplicarPalabras(String palabraGrandota, int nLetras){
+    public static HashSet<String> deduplicadorPalabras(String palabraGrandota, Integer nLetras){
+        if(palabraGrandota == null || nLetras == null) return new HashSet<>();
+
         String[] palabras = palabraGrandota.split(" ");
         HashSet<String> deduplicadas = (HashSet<String>) Arrays.stream(palabras)
                 .filter(p -> p.length() < nLetras)
@@ -62,7 +74,8 @@ public class ModificadorString {
         return deduplicadas;
     }
 
-    public static void limitarFrecuencias(HashMap<String,Integer> palabras, int limite){
+    public static void limitadorFrecuencias(HashMap<String,Integer> palabras, Integer limite){
+        if(limite == null || palabras == null) return;
         palabras.replaceAll((clave,valor) -> valor > limite?  limite : valor );
     }
 }
