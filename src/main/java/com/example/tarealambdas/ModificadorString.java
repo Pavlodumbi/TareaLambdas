@@ -1,10 +1,10 @@
 package com.example.tarealambdas;
 
-import java.lang.reflect.Array;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class modificarString {
+public class ModificadorString {
 
     public static void aplicarFiltro(ArrayList<String> cadenas, char letra, int longitud){
         cadenas.removeIf(c -> c.length() < longitud || c.charAt(0) == letra);
@@ -27,13 +27,11 @@ public class modificarString {
     }
 
     public static void modificarInventario(HashMap<String,Double> inventario){
-        System.out.println("_________________________________________________________");
         System.out.println("Inventario con 10% de descuento:");
         inventario.forEach((clave,valor) -> {
             System.out.print(clave + " - ");
             System.out.println(valor * .9);
         });
-        System.out.println("_________________________________________________________");
     }
 
     public static HashMap<String,Integer> contadorFrecuencias(ArrayList<String> palabras){
@@ -62,5 +60,9 @@ public class modificarString {
                 .map(String::toLowerCase)
                 .collect(Collectors.toSet());
         return deduplicadas;
+    }
+
+    public static void limitarFrecuencias(HashMap<String,Integer> palabras, int limite){
+        palabras.replaceAll((clave,valor) -> valor > limite?  limite : valor );
     }
 }

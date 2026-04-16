@@ -1,11 +1,10 @@
 package com.example.tarealambdas;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.stream.Collectors;
 
-public class modificarNumeros {
+public class ModificadorNumeros {
 
     public static void multiplicarArrayListFactor(ArrayList<Integer> entrada, int factor){
         entrada.replaceAll(t-> t*factor);
