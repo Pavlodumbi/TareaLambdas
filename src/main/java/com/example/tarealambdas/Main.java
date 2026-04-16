@@ -6,7 +6,7 @@ import java.util.HashSet;
 
 public class Main {
 
-    static void main(String[] args) {
+     static void main(String[] args) {
         ArrayList<Integer> prueba = new ArrayList();
 
         //Multiplicar por factor
@@ -36,7 +36,7 @@ public class Main {
         System.out.println(cadenas + "\n");
 
         ModificadorString.aplicarFiltro(cadenas, 'a',4);
-        System.out.println("Cadena con filtro letra 'a' o menos de 4 elementos:");
+        System.out.println("Cadena con filtro letra 'a' o menos de 4 caracteres:");
         System.out.println(cadenas);
         System.out.println("____________________________________________________________________________________________________");
 
