@@ -27,4 +27,33 @@ public class modificarString {
         ));
         return claveValor;
     }
+
+    public static void modificarInventario(HashMap<String,Double> inventario){
+        System.out.println("_________________________________________________________");
+        System.out.println("Inventario con 10% de descuento:");
+        inventario.forEach((clave,valor) -> {
+            System.out.print(clave + " - ");
+            System.out.println(valor * .9);
+        });
+        System.out.println("_________________________________________________________");
+    }
+
+    public static HashMap<String,Integer> contadorFrecuencias(ArrayList<String> palabras){
+        HashMap<String,Integer> palabrasConv = new HashMap<>();
+
+         palabras.forEach(p -> palabrasConv
+                .compute(p,(clave,valor) -> valor == null? 1 : valor + 1 ));
+
+         return palabrasConv;
+
+    }
+
+    public static ArrayList<String> clasificarPalabras(HashMap<String,Integer> palabras, int valor){
+        ArrayList<String> clasificadas = (ArrayList<String>)  palabras.entrySet()
+                .stream()
+                .filter(p -> p.getValue() < valor)
+                .map(p -> p.getKey())
+                .collect(Collectors.toList());
+        return clasificadas;
+    }
 }

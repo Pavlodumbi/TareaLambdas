@@ -1,5 +1,8 @@
 package com.example.tarealambdas;
 
+import jdk.management.HotSpotAOTCacheMXBean;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -53,6 +56,38 @@ public class main {
         HashMap<String,Integer> claveValor = modificarString.lengthMap(palabras);
         System.out.println(claveValor);
 
+        //Modificador de inventario
+        HashMap<String,Double> inventario = new HashMap<>();
+        inventario.put("Laptop",500.0);
+        inventario.put("Perapod",100.0);
+        inventario.put("dron de lego", 753.2);
+        inventario.put("monitor QHD", 3824.5);
+        System.out.println("Inventario antes del descuento:");
+        System.out.println(inventario);
+        modificarString.modificarInventario(inventario);
 
+        //contador de palabras usamos el mismo ArrayList palabras de arriba
+        for(int i = 0; i < 5; i ++){
+            palabras.add("Onrritorinco");
+            palabras.add("ballena azul");
+            palabras.add("Tom y Jerry");
+            palabras.add("enchufe");
+            palabras.add("1234");
+            palabras.add("enchufe");
+            palabras.add("1234");
+            palabras.add("enchufe");
+            palabras.add("1234");
+            palabras.add("hola a todos");
+            palabras.add("Tom y Jerry");
+        }
+        System.out.println(palabras);
+        HashMap<String,Integer> palabrasFrecuencias =  modificarString.contadorFrecuencias(palabras);
+        System.out.println(palabrasFrecuencias);
+
+        //Clasificador de palabras
+        System.out.println("Clasificador de palabras:");
+        System.out.println("Palabras antes de clasificar: " + palabrasFrecuencias);
+        ArrayList<String> clasificadas = modificarString.clasificarPalabras(palabrasFrecuencias,5);
+        System.out.println("Palabras clasificadas: " + clasificadas);
     }
 }
