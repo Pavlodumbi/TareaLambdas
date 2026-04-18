@@ -58,7 +58,7 @@ métodos que contiene:
       convertidos imprime -> [HOLA, COMO, TAL VEZ YO SI]
   
   
--public static HashMap<String,Integer> mapaLongitudes(ArrayList<String> palabras);
+- public static HashMap<String,Integer> mapaLongitudes(ArrayList<String> palabras);
 
     Escribe un método estático que dado un ArrayList<String> de palabras, utiliza Collectors.toMap() para crear un HashMap<String, Integer> donde la clave sea la palabra y el valor sea su longitud.
 
@@ -70,7 +70,7 @@ métodos que contiene:
        
        Obteniendo su longitud -> {Tom y Jerry=11, 1234=4, enchufe=7, ballena azul=12, Onrritorinco=12, termito=7}
   
-  -public static void mostrarDescuentoInventario(HashMap<String,Double> inventario);
+  - public static void mostrarDescuentoInventario(HashMap<String,Double> inventario);
   
     Escribe un método estático que dado un HashMap<String, Double> que representa nombres de productos y sus precios. Usa el método forEach() para imprimir un catálogo donde cada precio tenga un descuento del 10% en la       impresión.
 
