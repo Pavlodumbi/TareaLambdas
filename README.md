@@ -106,7 +106,40 @@ métodos que contiene:
        Palabras en un HashMap contadas -> {Tom y Jerry=11, 1234=16, hola a todos=5, enchufe=16, ballena azul=6, Onrritorinco=6, termito=2}
 
 
-   
+- public static ArrayList<String> clasificadorPalabras(HashMap<String,Integer> palabras, Integer valor);
+
+  Dado un HashMap<String, Integer> de palabras y sus frecuencias, usa entrySet().stream() para filtrar a las palabras con frecuencia inferior a un valor dado y guarda solo las palabras que cumplen con el criterio en un ArrayList.
+
+    Ejemplo de uso:
+      Palabras antes de clasificar -> {Tom y Jerry=11, 1234=16, hola a todos=5, enchufe=16, ballena azul=6, Onrritorinco=6, termito=2}
+  
+      ArrayList<String> clasificadas = UtileriaCadenas.clasificadorPalabras(palabrasFrecuencias,6);
+
+      retorna al Arraylist -> [hola a todos, termito]
+
+- public static HashSet<String> deduplicadorPalabras(String palabraGrandota, Integer nLetras);
+
+  Toma una frase larga, la divide en un array de palabras y usa un stream con lambdas para filtrar las palabras de menos de N letras, convertirlas a minúsculas y guardarlas en un HashSet para asegurar que no haya repetidas.
+
+    Ejemplo de uso:
+      Palabra original -> Quiero deduplicar esta palabra por lo tanto lo voy a hacer porque quiero y puedo y lo tengo que demostrar como ejemplo por eso tambien lo hago
+
+      HashSet<String> deduplicadas =  UtileriaCadenas.deduplicadorPalabras(palabraGrandota, 7);
+  
+      Palabra deduplicada en un HashSet -> [que, como, eso, voy, a, lo, quiero, puedo, tanto, hacer, hago, por, esta, tengo, y, porque]
+
+- public static void limitadorFrecuencias(HashMap<String,Integer> palabras, Integer limite);
+
+  Dado un HashMap<String, Integer> de palabras y frecuencias, usa replaceAll() para limitar todas las frecuencias a un máximo de N. Si una frecuencia es mayor a N, se fija exactamente en N mediante una lambda.
+
+    Ejemplo de uso:
+      Palabras con frecuencias variadas -> {Tom y Jerry=11, 1234=16, hola a todos=5, enchufe=16, ballena azul=6, Onrritorinco=6, termito=2}
+  
+      UtileriaCadenas.limitadorFrecuencias(palabrasFrecuencias, 4);
+  
+      Palabras con frecuencia limitada a 4 -> {Tom y Jerry=4, 1234=4, hola a todos=4, enchufe=4, ballena azul=4, Onrritorinco=4, termito=2}
+
+     
    
 
   
