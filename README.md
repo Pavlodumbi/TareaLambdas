@@ -97,8 +97,8 @@ métodos que contiene:
 
    Toma un ArrayList<String> de palabras (con repeticiones), y utiliza compute() para construir un mapa de frecuencias que muestre cuántas veces aparece cada palabra.
    
-   Ejemplo de uso:
-   Palabras -> [Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, termito, termito, Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, enchufe, 1234, enchufe, 1234, hola a todos, Tom y Jerry, Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, enchufe, 1234, enchufe, 1234, hola a todos, Tom y Jerry, Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, enchufe, 1234, enchufe, 1234, hola a todos, Tom y Jerry, Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, enchufe, 1234, enchufe, 1234, hola a todos, Tom y Jerry, Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, enchufe, 1234, enchufe, 1234, hola a todos, Tom y Jerry]
+     Ejemplo de uso:
+       Palabras -> [Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, termito, termito, Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, enchufe, 1234, enchufe, 1234, hola a todos, Tom y Jerry, Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, enchufe, 1234, enchufe, 1234, hola a todos, Tom y Jerry, Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, enchufe, 1234, enchufe, 1234, hola a todos, Tom y Jerry, Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, enchufe, 1234, enchufe, 1234, hola a todos, Tom y Jerry, Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, enchufe, 1234, enchufe, 1234, hola a todos, Tom y Jerry]
 
    
    
