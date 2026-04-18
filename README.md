@@ -6,7 +6,9 @@ Cada una tiene los métodos que corresponden dependiendo de la categoría de dat
 Se realizaron pruebas que demuestran todos los métodos con ejemplos representativos, demostrando el correcto funcionamiento de cada método.
 
 UtileriaNumeros.
+
 métodos que contiene:
+
 - public static void multiplicarElementosPorFactor(ArrayList<Integer> entrada, Integer factor);
   
     Recibe un ArrayList y un factor por el cual se debe multiplicar cada elemento del Arraylist. Modifica directamente el ArrayList enviado.
