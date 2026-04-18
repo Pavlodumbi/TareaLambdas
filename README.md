@@ -7,7 +7,8 @@ Se realizaron pruebas que demuestran todos los métodos con ejemplos representat
 
 UtileriaNumeros.
 métodos que contiene:
-- public static void multiplicarElementosPorFactor(ArrayList<Integer> entrada, Integer factor);\n
+- public static void multiplicarElementosPorFactor(ArrayList<Integer> entrada, Integer factor);
+  
     Recibe un ArrayList y un factor por el cual se debe multiplicar cada elemento del Arraylist. Modifica directamente el ArrayList enviado.
     Ejemplo de uso:
       Para utilizarlo, ponemos como ejemplo tener un ArrayList llamado prueba, que contiene números:
