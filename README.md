@@ -10,30 +10,52 @@ métodos que contiene:
 - public static void multiplicarElementosPorFactor(ArrayList<Integer> entrada, Integer factor);
   
     Recibe un ArrayList y un factor por el cual se debe multiplicar cada elemento del Arraylist. Modifica directamente el ArrayList enviado.
+  
     Ejemplo de uso:
+  
       Para utilizarlo, ponemos como ejemplo tener un ArrayList llamado prueba, que contiene números:
+  
       prueba contiene -> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-      UtileriaNumeros.multiplicarElementosPorFactor(prueba,4); 
-      Si imprimimos el ArrayList modificado, todos los elementos deberían de estar multiplicados por 4. 
+  
+      UtileriaNumeros.multiplicarElementosPorFactor(prueba,4);
+  
+      Si imprimimos el ArrayList modificado, todos los elementos deberían de estar multiplicados por 4.
+  
       imprime -> [0, 4, 8, 12, 16, 20, 24, 28, 32, 36]
+  
 
 
 - public static HashSet<Integer> cuadradosUnicos(ArrayList<Integer> numeros);
+- 
     Escribe un método estático que dado un ArrayList<Integer> que contiene duplicados, crea un HashSet que contenga únicamente los cuadrados de los números pares únicos de la lista original.
     Ejemplo de uso:
+  
       Tenemos los números duplicados con nombre numeros  -> [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9]
+  
       HashSet<Integer> cuadradosUnicos = UtileriaNumeros.cuadradosUnicos(numeros);
+  
       Numeros despues de aplicar metodo ->  [0, 16, 64, 4, 36]
+  
 
 
 UtileriaCadenas.
+
 métodos que contiene:
+
 - public static ArrayList<String> conversorMayusculas(ArrayList<String> lista);
+- 
     Escribe un método estático que dado un ArrayList<String> de palabras, utiliza Collectors.toMap() para crear un HashMap<String, Integer> donde la clave sea la palabra y el valor sea su longitud.
+  
     Ejemplo de uso:
+  
       cadenas contine -> [Hola, Como, Tal vez yo si]
+  
       ArrayList<String> convertidos = UtileriaCadenas.conversorMayusculas(cadenas);
+  
       convertidos imprime -> [HOLA, COMO, TAL VEZ YO SI]
   
+  
 -public static HashMap<String,Integer> mapaLongitudes(ArrayList<String> palabras);
+
 Escribe un método estático que dado un ArrayList<String> de palabras, utiliza Collectors.toMap() para crear un HashMap<String, Integer> donde la clave sea la palabra y el valor sea su longitud.
+
