@@ -26,7 +26,7 @@ métodos que contiene:
 
 
 - public static HashSet<Integer> cuadradosUnicos(ArrayList<Integer> numeros);
-- 
+  
     Escribe un método estático que dado un ArrayList<Integer> que contiene duplicados, crea un HashSet que contenga únicamente los cuadrados de los números pares únicos de la lista original.
   
     Ejemplo de uso:
@@ -44,7 +44,7 @@ UtileriaCadenas.
 métodos que contiene:
 
 - public static ArrayList<String> conversorMayusculas(ArrayList<String> lista);
-- 
+  
     Escribe un método estático que dado un ArrayList<String> de palabras, utiliza Collectors.toMap() para crear un HashMap<String, Integer> donde la clave sea la palabra y el valor sea su longitud.
   
     Ejemplo de uso:
