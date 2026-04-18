@@ -60,7 +60,7 @@ métodos que contiene:
   
 - public static HashMap<String,Integer> mapaLongitudes(ArrayList<String> palabras);
 
-    Escribe un método estático que dado un ArrayList<String> de palabras, utiliza Collectors.toMap() para crear un HashMap<String, Integer> donde la clave sea la palabra y el valor sea su longitud.
+    Escribe un método estático que dado un ArrayList<String> de palabras, utiliza Collectors.toMap() para crear un HashMap<String, Integer> donde la clave sea la palabra y el valor        sea su longitud.
 
      Ejemplo de uso:
    
@@ -70,8 +70,43 @@ métodos que contiene:
        
        Obteniendo su longitud -> {Tom y Jerry=11, 1234=4, enchufe=7, ballena azul=12, Onrritorinco=12, termito=7}
   
-  - public static void mostrarDescuentoInventario(HashMap<String,Double> inventario);
+- public static void mostrarDescuentoInventario(HashMap<String,Double> inventario);
   
-    Escribe un método estático que dado un HashMap<String, Double> que representa nombres de productos y sus precios. Usa el método forEach() para imprimir un catálogo donde cada precio tenga un descuento del 10% en la       impresión.
+   Escribe un método estático que dado un HashMap<String, Double> que representa nombres de productos y sus precios. Usa el método forEach() para imprimir un catálogo donde cada          precio tenga un descuento del 10% en la impresión.
+  
+     Ejemplo de uso:
+      
+      Inventario antes del descuento -> {Laptop=500.0, Perapod=100.0, dron de lego=753.2, monitor QHD=3824.5}
+  
+      UtileriaCadenas.mostrarDescuentoInventario(inventario);
+  
+      Imprime lo siguiente:
+  
+      Inventario con 10% de descuento:
+  
+      Laptop - 450.0
+  
+      Perapod - 90.0
+
+      dron de lego - 677.8800000000001
+  
+      monitor QHD - 3442.05
+  
+
+ - public static HashMap<String,Integer> contadorFrecuencias(ArrayList<String> palabras);
+
+   Toma un ArrayList<String> de palabras (con repeticiones), y utiliza compute() para construir un mapa de frecuencias que muestre cuántas veces aparece cada palabra.
+   
+   Ejemplo de uso:
+   Palabras -> [Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, termito, termito, Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, enchufe, 1234, enchufe, 1234, hola a todos, Tom y Jerry, Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, enchufe, 1234, enchufe, 1234, hola a todos, Tom y Jerry, Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, enchufe, 1234, enchufe, 1234, hola a todos, Tom y Jerry, Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, enchufe, 1234, enchufe, 1234, hola a todos, Tom y Jerry, Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, enchufe, 1234, enchufe, 1234, hola a todos, Tom y Jerry]
+
+   
+   
+
+  
+      
+    
+    
+
 
 
