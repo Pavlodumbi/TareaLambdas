@@ -28,6 +28,7 @@ métodos que contiene:
 - public static HashSet<Integer> cuadradosUnicos(ArrayList<Integer> numeros);
 - 
     Escribe un método estático que dado un ArrayList<Integer> que contiene duplicados, crea un HashSet que contenga únicamente los cuadrados de los números pares únicos de la lista original.
+  
     Ejemplo de uso:
   
       Tenemos los números duplicados con nombre numeros  -> [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9]
