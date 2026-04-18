@@ -44,6 +44,17 @@ métodos que contiene:
 UtileriaCadenas.
 
 métodos que contiene:
+- public static void filtrarPorLetraYLongitud(ArrayList<String> cadenas, char letra, Integer longitud);
+
+  Elimina todas las cadenas que comiencen con una letra que recibe como parámetro o que tengan una longitud menor a N caracteres.
+
+    Ejemplo de uso:
+      Cadena original -> [Hola, Como, adios, a esto no se vera, a esto tampoco, Tal vez yo si, ni, America]
+  
+      UtileriaCadenas.filtrarPorLetraYLongitud(cadenas, 'a',4);
+
+      Cadena con filtro letra 'a' o menos de 4 caracteres -> [Hola, Como, Tal vez yo si]
+
 
 - public static ArrayList<String> conversorMayusculas(ArrayList<String> lista);
   
