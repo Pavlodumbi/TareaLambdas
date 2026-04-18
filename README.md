@@ -101,6 +101,11 @@ métodos que contiene:
    
          Palabras -> [Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, termito, termito, Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, enchufe, 1234, enchufe, 1234, hola a todos, Tom y Jerry, Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, enchufe, 1234, enchufe, 1234, hola a todos, Tom y Jerry, Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, enchufe, 1234, enchufe, 1234, hola a todos, Tom y Jerry, Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, enchufe, 1234, enchufe, 1234, hola a todos, Tom y Jerry, Onrritorinco, ballena azul, Tom y Jerry, enchufe, 1234, enchufe, 1234, enchufe, 1234, hola a todos, Tom y Jerry]
 
+   HashMap<String,Integer> palabrasFrecuencias =  UtileriaCadenas.contadorFrecuencias(palabras);
+   
+   Palabras en un HashMap contadas -> {Tom y Jerry=11, 1234=16, hola a todos=5, enchufe=16, ballena azul=6, Onrritorinco=6, termito=2}
+
+
    
    
 
